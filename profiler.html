@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		
+		<style> 
+			body {
+				background: #080808;
+				font-size: 12px; !important
+				-webkit-user-select: none; /* Safari */        
+				-moz-user-select: none; /* Firefox */
+				-ms-user-select: none; /* IE10+/Edge */
+				user-select: none; /* Standard */
+
+			}
+				
+			header {
+				
+				border-top: 1px solid rgba(0, 169, 247, 0.5);
+				border-bottom: 1px solid rgba(0, 169, 247, 0.3);
+			}
+			
+			.title {
+				color: #00a9f7;
+				letter-spacing: 8px;
+				font-size: 32px;
+				text-shadow: 1px 1px 5px #00a9f7;
+			}
+			
+			tr th[scope="col"] {
+				    white-space: nowrap;
+			}
+			
+			.table {
+				background: #121212; !important
+			}
+			
+		
+		
+			
+			.table tr:hover {
+				background: rgba(0, 169, 247, 0.1);
+				transition: background-color 0.2s;
+				cursor: pointer;
+			}
+		
+			
+			.table td, .table th {
+				border-top: none; !important;
+				border-bottom: none; !important;
+			}
+			
+			.table thead th {
+				border-bottom: 1px solid rgba(0, 169, 247, 0.3);
+			}
+			
+			
+			th, tr {
+				text-align: center !important;
+			}
+			
+			td {
+				padding: 0.45rem;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="margin-bottom">
+			<div class="title text-center">
+				<span class='neverlose-letter'>N</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>V</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>S</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'> </span><span class='neverlose-letter'>P</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>F</span><span class='neverlose-letter'>I</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span>
+			</div>
+		</header>
+			<main class="container">
+				<table class="table table-dark">
+				  <thead>
+					<tr>
+					  <th scope="col" class="text-center">STEAMID</th>
+					  <th scope="col">Steam name</th>
+					  <th scope="col">Steam level</th>
+					  <th scope="col">VAC Bans</th>
+					  <th scope="col">Game Bans</th>
+					  <th scope="col">Community Bans</th>
+					  <th scope="col">CSGO Hours</th>
+					  <th scope="col">Matches</th>
+					  <th scope="col">Wins</th>
+					  <th scope="col">Friends</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+						<td>STEAM_0:0:531442730</td>
+						<td>Smeone</td>
+						<td>5</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1202</td>
+						<td>659</td>
+						<td>201</td>
+						<td>54</td>
+					</tr>
+					<tr>
+						<td>STEAM_0:0:531442730</td>
+						<td>Smeone</td>
+						<td>5</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1202</td>
+						<td>659</td>
+						<td>201</td>
+						<td>54</td>
+						</tr>
+					<tr>
+						<td>STEAM_0:0:531442730</td>
+						<td>Smeone</td>
+						<td>5</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1202</td>
+						<td>659</td>
+						<td>201</td>
+						<td>54</td>
+					</tr>
+				  </tbody>
+				</table>
+		</main>
+		<script>
+			// sixthsense phrase shine effect
+			
+			let chars = document.getElementsByClassName("neverlose-letter");
+			let current_char_index = 0;
+			
+			let shine_delay = 1000; // The wait time for the shine effect to happen again (ms)
+			let color_change_delay = 200 // The delay of color change (must be same as sixthsense-phrase-letter css class transition speed) (ms)
+			
+			let delay = Date.now() + shine_delay
+			
+			let default_color = "rgba(0, 169, 247, 1)" // can be rgb(0,0,0) or hex color
+			let shine_color = "rgba(0, 169, 247, 1)" // can be rgb(0,0,0) or hex color
+			// change default color in css sixthsense-phrase-letter css class as well
+						
+			setInterval(() => {
+				if (Date.now() >= delay) {		
+					if (current_char_index >= chars.length) {
+						current_char_index = 0;
+						delay = Date.now() + shine_delay
+						return
+					}
+					chars[current_char_index].style.color = shine_color;
+					chars[current_char_index].style.textShadow = "1px 1px 8px " + shine_color;
+					chars[current_char_index].colors_set = [true, Date.now()]
+					current_char_index += 1
+				}else {
+					current_char_index = 0;
+				}
+				
+				for (let i=0; i < chars.length; i++){
+					let char = chars[i]
+					if (char.colors_set && char.colors_set[0]) {
+						
+						if (Date.now() - char.colors_set[1] > color_change_delay) {
+							char.colors_set[0] = false
+							char.style.color = default_color;
+							char.style.textShadow = "1px 1px 5px " + shine_color;
+							
+						}
+					}
+				}
+			
+			}, 50)
+			
+			
+			for (var i=0, i<100;i++){
+				$.Msg("Test")
+			}
+			
+		</script>
+	</body>
+
+</html>
