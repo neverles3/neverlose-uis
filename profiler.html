@@ -74,8 +74,8 @@
 				<span class='neverlose-letter'>N</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>V</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>S</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'> </span><span class='neverlose-letter'>P</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>F</span><span class='neverlose-letter'>I</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span>
 			</div>
 		</header>
-			<main class="container">
-				<table class="table table-dark">
+			<main style="width 100%">
+				<table id="mytable" class="table table-dark">
 				  <thead>
 					<tr>
 					  <th scope="col" class="text-center">STEAMID</th>
@@ -91,7 +91,7 @@
 					</tr>
 				  </thead>
 				  <tbody>
-					<tr onclick="alert(69)">
+					<tr>
 						<td>STEAM_0:0:531442730</td>
 						<td>Smeone</td>
 						<td>5</td>
@@ -130,6 +130,11 @@
 				  </tbody>
 				</table>
 		</main>
+		
+		
+		<footer>
+			<p class="text-white text-center" style="font-size: 17px;">Made by Chicken4673</p>
+		</footer>
 		<script>
 			// sixthsense phrase shine effect
 			
@@ -175,8 +180,29 @@
 			
 			}, 50)
 			
+			for (var i=0; i<1000; i++){
+insert_row()
+}
 			
-			
+			function insert_row(sid, s_name, s_level, vacbans, gamebans, communitybans, CSGOHours, matches, wins, friends){
+				var myHtmlContent = `<td>STEAM_0:0:531442730</td>
+				<td>Smeone</td>
+				<td>5</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1202</td>
+				<td>659</td>
+				<td>201</td>
+				<td>54</td>`
+					var tableRef = document.getElementById('mytable').getElementsByTagName('tbody')[0];
+
+					var newRow = tableRef.insertRow(tableRef.rows.length);
+					var newRow2 = tableRef.insertRow(tableRef.rows.length);
+					newRow.innerHTML = myHtmlContent;
+
+				
+			}
 			
 		</script>
 	</body>
