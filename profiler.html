@@ -6,30 +6,39 @@
 		
 		<style> 
 			body {
-				background: #080808;
-				font-size: 12px; !important
-				-webkit-user-select: none; /* Safari */        
-				-moz-user-select: none; /* Firefox */
-				-ms-user-select: none; /* IE10+/Edge */
+				background: rgb(8, 8, 8) !important;
+				font-size: 12px !important;
+				font-family: Arial !important;
+			
 				user-select: none; /* Standard */
 
 			}
+			
+							
+		
+			.state-btn {
+				color: white;
+				background: red;
+				width: 550px;
+				margin: 0px;
+				height: 50px;
+				display: inline-block;
 				
-			header {
-				
-				border-top: 1px solid rgba(0, 169, 247, 0.5);
-				border-bottom: 1px solid rgba(0, 169, 247, 0.3);
+			}
+			
+			main {
+				margin-top: 20px;
 			}
 			
 			.title {
 				color: #00a9f7;
 				letter-spacing: 8px;
 				font-size: 32px;
-				text-shadow: 1px 1px 5px #00a9f7;
+				text-shadow: 1px 1px 5px rgba(0, 169, 247, 1);
 			}
 			
 			tr th[scope="col"] {
-				    white-space: nowrap;
+				white-space: nowrap;
 			}
 			
 			.table {
@@ -39,6 +48,11 @@
 		
 		
 			
+			@media only screen and (max-width: 600px) {
+			  body {
+				background-color: lightblue !important;
+			  }
+			}
 			.table tr:hover {
 				background: rgba(0, 169, 247, 0.1);
 				transition: background-color 0.2s;
@@ -52,83 +66,125 @@
 			}
 			
 			.table thead th {
+				border-top: 1px solid rgba(0, 169, 247, 0.3);
 				border-bottom: 1px solid rgba(0, 169, 247, 0.3);
 			}
 			
 			
-			th, tr {
+			th, td {
 				text-align: center !important;
+				padding: 0px !important;
 			}
 			
 			td {
 				padding: 0.45rem;
 			}
 			
+			.view-btn {
+				background-color: rgb(15, 15, 15);
+				border-radius: 0; !important;
+				border: 0;
+				border-top: 1px solid rgba(0, 169, 247, 0.3);
+				color: white;
+			
+
+			}
+			
+			.view-btn:hover {
+				background-color:rgba(0, 169, 247, 0.2);
+				color: white;
+			}
+			
+			
+			.steam-viewer {
+				max-height: 600px;
+			}
+			
+			.small-text {
+				font-size: 10px;
+				white-space: nowrap;
+				padding: 2px !important;
+			}
 			
 		</style>
 	</head>
 
 	<body>
-		<header class="margin-bottom">
-			<div class="title text-center">
+		<header>
+			<div class="title text-center logo">
 				<span class='neverlose-letter'>N</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>V</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>S</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'> </span><span class='neverlose-letter'>P</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>F</span><span class='neverlose-letter'>I</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span>
 			</div>
 		</header>
-			<main style="width 100%">
-				<table id="mytable" class="table table-dark">
-				  <thead>
-					<tr>
-					  <th scope="col" class="text-center">STEAMID</th>
-					  <th scope="col">Steam name</th>
-					  <th scope="col">Steam level</th>
-					  <th scope="col">VAC Bans</th>
-					  <th scope="col">Game Bans</th>
-					  <th scope="col">Community Bans</th>
-					  <th scope="col">CSGO Hours</th>
-					  <th scope="col">Matches</th>
-					  <th scope="col">Wins</th>
-					  <th scope="col">Friends</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr>
-						<td>STEAM_0:0:531442730</td>
-						<td>Smeone</td>
-						<td>5</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>1202</td>
-						<td>659</td>
-						<td>201</td>
-						<td>54</td>
-					</tr>
-					<tr>
-						<td>STEAM_0:0:531442730</td>
-						<td>Smeone</td>
-						<td>5</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>1202</td>
-						<td>659</td>
-						<td>201</td>
-						<td>54</td>
-						</tr>
-					<tr>
-						<td>STEAM_0:0:531442730</td>
-						<td>Smeone</td>
-						<td>5</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>1202</td>
-						<td>659</td>
-						<td>201</td>
-						<td>54</td>
-					</tr>
-				  </tbody>
-				</table>
+			
+			<main class="container-fluid">
+				
+				<div class="row">
+					<div class="col-6 pr-0 pl-0">
+						<a class="btn d-block view-btn" style="border-right: 1px solid rgba(0, 169, 247, 0.2);">Current game</a>
+					</div>
+					
+					<div class="col-6 pr-0 pl-0">
+						<a class="btn d-block view-btn">Saved profiles</a>
+					</div>
+				</div>
+				
+				
+				<div class="row">
+					
+					<div class="col-8 pr-0 pl-0">
+					
+						<table id="mytable" class="table table-dark">
+								<thead>
+									<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Level</th>
+									<th scope="col">VACS</th>
+									<th scope="col">GameBans</th>
+									<th scope="col">Last ban</th>
+									<th scope="col">CSGOHours</th>
+									<th scope="col">Matches</th>
+									<th scope="col">Wins</th>
+									<th scope="col">Friends</th>
+								</tr>
+								</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="col-4 pl-0">
+						
+						<div class="row ml-0">
+						
+							<div class="col-3 pr-0 pl-0">
+								<a class="btn d-block view-btn small-text">Save</a>
+							</div>
+							
+							
+							<div class="col-3 pr-0 pl-0">
+								<a class="btn d-block view-btn small-text">Watch & Save</a>
+							</div>
+							
+							<div class="col-3 pr-0 pl-0">
+								<a class="btn d-block view-btn small-text">Say Rank</a>
+							</div>
+							
+							<div class="col-3 pr-0 pl-0">
+								<a class="btn d-block view-btn small-text">Open profile</a>
+							</div>
+							
+						</div>
+						
+						<div class="row ml-0" style="overflow: scroll">
+							<div class="steam-viewer col-12">
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				
 		</main>
 		
 		
@@ -181,28 +237,45 @@
 			}, 50)
 			
 			for (var i=0; i<1000; i++){
-insert_row()
-}
+				insert_row("https://steamcommunity.com/id/Smeone/", "STEAM_", "Riddle", "100", 0, 0, 0, 1000, 402, 110, 10)
+			}
 			
-			function insert_row(sid, s_name, s_level, vacbans, gamebans, communitybans, CSGOHours, matches, wins, friends){
-				var myHtmlContent = `<td>STEAM_0:0:531442730</td>
-				<td>Smeone</td>
-				<td>5</td>
-				<td>0</td>
-				<td>0</td>
-				<td>0</td>
-				<td>1202</td>
-				<td>659</td>
-				<td>201</td>
-				<td>54</td>`
+			function insert_row(link, sid, s_name, s_level, vacbans, gamebans, communitybans, CSGOHours, matches, wins, friends){
+				var myHtmlContent = `
+				<td>${s_name}</td>
+				<td>${s_level}</td>
+				<td>${vacbans}</td>
+				<td>${gamebans}</td>
+				<td>${communitybans}</td>
+				<td>${CSGOHours}</td>
+				<td>${matches}</td>
+				<td>${wins}</td>
+				<td>${friends}</td>`
 					var tableRef = document.getElementById('mytable').getElementsByTagName('tbody')[0];
 
 					var newRow = tableRef.insertRow(tableRef.rows.length);
 					var newRow2 = tableRef.insertRow(tableRef.rows.length);
 					newRow.innerHTML = myHtmlContent;
+					newRow.setAttribute('onclick','display_steam_profile("' + link + '")')
 
 				
 			}
+			
+			function display_steam_profile(link){
+			
+				fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(link)}`)
+                    .then(response => {
+                      if (response.ok) return response.json()
+                      throw new Error('Network response was not ok.')
+                    })
+                    .then((data) => {
+						console.log(data)
+						document.querySelectorAll(".steam-viewer")[0].innerHTML = data.contents
+					
+					
+					});
+			}
+			<!-- display_steam_profile(1) -->
 			
 		</script>
 	</body>
