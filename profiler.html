@@ -8,7 +8,7 @@
 			body {
 				background: rgb(8, 8, 8) !important;
 				font-size: 12px !important;
-				font-family: Arial !important;
+				font-family: Roboto !important;
 			
 				user-select: none; /* Standard */
 
@@ -107,23 +107,48 @@
 				padding: 2px !important;
 			}
 			
-			.neverlose-letter {
-				position: relative;
-				top: 8px;
+			
+			
+			.version-text {
+				color: white;
+				margin-left: 5px;
+			}
+			
+			.control-bar {
+				background: rgb(20, 20, 20) !important;
+				height: 20px;
+			}
+			
+			.control-bar:hover {
+				background: rgb(15, 15, 15) !important;
 			}
 			
 		</style>
 	</head>
 
 	<body>
-		<header>
-			<div class="title text-center logo">
-				<span class='neverlose-letter'>N</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>V</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>S</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'> </span><span class='neverlose-letter'>P</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>F</span><span class='neverlose-letter'>I</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span>
-			</div>
-		</header>
 			
-			<main class="container-fluid">
+		
+			
+			<main class="container-fluid mt-0">
+			
+			<header>
+				<div class="row control-bar">
+					<div class="col-12 pr-0 pl-0">
+						<p class="version-text">version 1.0</p>
+					</div>
+				</div>
 				
+				
+				<div class="title text-center logo">
+					
+					<span class='neverlose-letter'>N</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>V</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>S</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'> </span><span class='neverlose-letter'>P</span><span class='neverlose-letter'>R</span><span class='neverlose-letter'>O</span><span class='neverlose-letter'>F</span><span class='neverlose-letter'>I</span><span class='neverlose-letter'>L</span><span class='neverlose-letter'>E</span><span class='neverlose-letter'>R</span>
+				</div>
+			</header>
+					
+			
+					
+					
 				<div class="row">
 					<div class="col-6 pr-0 pl-0">
 						<a class="btn d-block view-btn" style="border-right: 1px solid rgba(0, 169, 247, 0.2);" id="current-game">Current game</a>
