@@ -14,50 +14,36 @@
 				font-family: "Arial";
 			}
 		
-			div.wrap {
-				display: table;
+			.chatbox {
 				width: 100%;
 				background: #031220;
-				height: 150px;
+				min-height: 150px;
 			}
 
-			div.cell {
-				display: table-cell;
-				vertical-align: bottom;
-				cursor: pointer;
-			}
-
-			div.cell p {
-				color: white;
-				word-wrap: none;
-				margin: 0;
-			}
-			
-			
+		
 			.from-lang {
 				color: red;
 				font-family: "Times New Roman", Times, serif;
-				font-size: 20px;
+				font-size: 14px;
 			}
 			
 			.arrow-text {
 				color: white;
-				font-size: 20px;
-				position: relative;
-				top: 2px;
+				font-size: 14px;
+			
 			}
 			
 			.to-lang {
 				color: rgba(0, 230, 64, 1);
 				font-family: "Times New Roman", Times, serif;
-				font-size: 20px;
+				font-size: 14px;
 			}
 			
 			#input-msg {
 				width: 100%;
 				padding:0;
 				margin:0;
-				height: 30px;
+				height: 25px;
 				overflow: hidden;
 			}
 			
@@ -70,33 +56,27 @@
 			}
 			
 			.message {
-				color: white;
+				color: white;	
+				word-break: break-all;
 			}
-			
-	<!-- rgba(255,223,147,255) T --> 
-	<!-- rgba(162,198,255,255) CT -->
+		
 			
 		</style>
 	</head>
 
 	<body>			
 		<main>
-		
-			<div class="wrap">
-				<div class="cell">
-					<div id="messages">
-					
-					</div>
-					<input type="text" id="input-msg">
-
+			<div class="chatbox">
+				<div id="messages">
+				
 				</div>
 			</div>
-			
-			
+			<input type="text" id="input-msg">				
+
 		</main>
 		
 
-		
+
 		<script>
 		
 		if (!String.prototype.format) {
@@ -116,7 +96,7 @@
 			// text2 = untranslated text
 			
 			
-			var node = document.createElement("p");
+			var node = document.createElement("span");
 			
 			var teamName = ""
 			if (IsTeamChat == "true") {
@@ -130,11 +110,13 @@
 			}
 			
 			
-			node.innerHTML = "(<span class='from-lang'>{0}</span><span class='arrow-text'>🠖</span><span class='to-lang'>{1}</span>)<span class={2}>{3}</span> <span class={4}>{5}</span>: <span class='message'>{6}</span>".format(langFrom, langTo, nameClass, teamName, nameClass, name, text)
+			node.innerHTML = "(<span class='from-lang'>{0}</span><span class='arrow-text'>🠖</span><span class='to-lang'>{1}</span>)<span class={2}>{3}</span> <span class={4}>{5}</span>: <span class='text'>{6}</span>".format(langFrom, langTo, nameClass, teamName, nameClass, name, text)
+			
+			node.classList.add("message")
 			
 			var _switch = false;
 			node.addEventListener("click", function(){
-				var message = node.getElementsByClassName("message")[0]
+				var message = node.getElementsByClassName("text")[0]
 				
 				var _langFrom = node.getElementsByClassName("from-lang")[0]
 				var _arrow = node.getElementsByClassName("arrow-text")[0]
@@ -153,7 +135,8 @@
 			
 			document.getElementById("messages").appendChild(node);
 		}
-					
+		
+		
 		</script>
 	</body>
 
