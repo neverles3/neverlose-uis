@@ -118,11 +118,11 @@
 			var node = document.createElement("p");
 			
 			var teamName = ""
-			if (IsTeamChat) {
-				teamName = teamNum === 2 ? "(Terrorist)" : "(Counter-Terrorist)"
+			if (IsTeamChat == "true") {
+				teamName = teamNum == 2 ? "(Terrorist)" : "(Counter-Terrorist)"
 			}
 			var nameClass = ""
-			if (teamNum === 2) {
+			if (teamNum == 2) {
 				nameClass = "t-color"	
 			}else{
 				nameClass = "ct-color"
