@@ -13,7 +13,12 @@
 				scrollbar-width: thin;
 				font-family: "Arial";
 			}
-		
+			
+			p {
+				margin:0;
+				padding:0;
+			}
+			
 			.chatbox {
 				width: 100%;
 				background: #031220;
@@ -96,7 +101,7 @@
 			// text2 = untranslated text
 			
 			
-			var node = document.createElement("span");
+			var node = document.createElement("p");
 			
 			var teamName = ""
 			if (IsTeamChat == "true") {
