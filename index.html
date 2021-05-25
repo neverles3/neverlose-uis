@@ -142,9 +142,17 @@
 		}
 		
 		var myInput = document.getElementById('input-msg');
+		myInput.addEventListener('keypress', function(e){
+			if (e.code === "Enter" || e.code === "NumpadEnter"){
+				alert(myInput.value)
+				myInput.value = ""
+			}
+		});
+			
+		
 		setInterval(function() {
-			console.log(1)
-		   myInput.focus(); 
+			window.scrollTo(0,document.body.scrollHeight);
+			myInput.focus();
 		}, 100);
 		
 		
