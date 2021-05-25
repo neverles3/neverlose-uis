@@ -145,18 +145,10 @@
 		}
 		
 		var myInput = document.getElementById('input-msg');
-		document.getElementsByTagName("body")[0].addEventListener('keypress', function(e){
-			if (e.code === "Enter" || e.code === "NumpadEnter"){
-				alert(myInput.value)
-				myInput.value = ""
-			}
-		});
-			
-		
-		setInterval(function() {
-			window.scrollTo(0,document.body.scrollHeight);
-			myInput.focus();
-		}, 100);
+	
+		window.scrollTo(0,document.body.scrollHeight);
+		myInput.focus();
+
 		
 		
 		</script>
